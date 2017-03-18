@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+struct identite
+{
+	string nom;
+	string prenom;
+	__int64 age;
+	string sexe_reponse;
+	bool sexe;
+
+	void presentation(bool sexe)
+	{
+		if (sexe)
+		{
+			cout <<endl <<"Je m'appelle " << nom << " " << prenom << endl;
+			cout << "j'ai " << age << " ans" << " et je suis un " << sexe_reponse << endl;
+		}
+		else 
+		{
+
+			cout <<endl << "Je m'appelle " << nom << " " << prenom << endl;
+			cout << "j'ai " << age << " ans" << " et je suis une " << sexe_reponse  << endl;
+		}
+		
+
+	}
+};
+
+int main()
+{
+
+	identite moi;
+
+	cout << "Quel est votre nom: " ;
+	cin >> moi.nom ;
+
+	cout << "Quel est votre prenom: ";
+	cin >> moi.prenom;
+
+	cout << "Quel est votre age: ";
+	cin >> moi.age;
+
+	cout << "Quel est votre sexe: ";
+	cin >> moi.sexe_reponse;
+
+	if (moi.sexe_reponse == "Hommme" || moi.sexe_reponse == "homme" || moi.sexe_reponse == "h" || moi.sexe_reponse == "H")
+	{
+		moi.sexe = true;
+	}
+	else
+	{
+		moi.sexe = false;
+	}
+
+
+	moi.presentation(moi.sexe);
+
+
+	return 0;
+}
